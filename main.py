@@ -28,6 +28,20 @@ stime = 0
 flag = False
 sindex = []
 
+def min_distance(index):
+    pos = []
+    pos.append(width-200)
+    pos.append(height-100)
+    x = index['x']
+    y = index['y']
+    distance1 = pow(pos[0]-x,2)+pow(pos[1]-y,2)
+    distance2 = pow(pos[0]-offsetx-x,2)+pow(pos[1]-y,2)
+    distance3 = pow(pos[0]-offsetx-x,2)+pow(pos[1]-offsety-y,2)
+    distance4 = pow(pos[0]-x,2)+pow(pos[1]-offsety-y,2)
+
+    print("最小距离为："+str(min(distance1,distance2,distance3,distance4)))
+
+
 def check(screen,index,x,y):        #检查是否接近圆点
     global flag,sindex
     x += mouse_cursor.get_width() / 2
@@ -73,6 +87,10 @@ if __name__ == '__main__':
 
     x_temp = 0
     y_temp = 0
+
+    pygame.mouse.set_pos(width-200,height-100)      #固定光标位置
+    min_distance(index[0])
+
     while True:
         # 游戏主循环
         for event in pygame.event.get():

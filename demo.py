@@ -48,16 +48,20 @@ def check(screen,index,x,y):        #检查是否接近圆点
     x += mouse_cursor.get_width() / 2
     y += mouse_cursor.get_height() / 2
     i = 0
+    num = 0
     for d in index:
         if pow(x-d['x'], 2)+pow(y-d['y'],2) <= pow(zhijing/2,2):
+            num += 1
             if flag and i == 0:
                 eindex = pygame.mouse.get_pos()
                 print("移动距离为："+str(pow(sindex[0] - eindex[0], 2) + pow(sindex[1] - eindex[1], 2)))
                 sindex = []
                 print("时间为："+str(time.time()-stime))
                 flag = False
+                print(num)
             pygame.draw.circle(screen, green, [d['x'], d['y']], zhijing)
         i += 1
+
 if __name__ == '__main__':
     zhijing_index = random.randrange(3)
     num_index = random.randrange(3)
@@ -100,11 +104,11 @@ if __name__ == '__main__':
             screen.blit(mouse_cursor3, (x_temp, y_temp - offsety))
             screen.blit(mouse_cursor4, (x_temp - offsetx, y_temp))
             if event.type == KEYDOWN:
-                if event.key == K_1:  # 获取键盘字母a
+                if event.key == K_1:
                     choice = 1
-                elif event.key == K_2:  # 获取键盘空格键
+                elif event.key == K_2:
                     choice = 2
-                elif event.key == K_3:  # 获取键盘左键
+                elif event.key == K_3:
                     choice = 3
                 elif event.key == K_4:
                     choice = 4

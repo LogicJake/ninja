@@ -2,7 +2,7 @@
 import random
 import pygame
 import time
-
+from random import shuffle
 from math import *
 from pygame.locals import *
 from sys import exit
@@ -27,17 +27,17 @@ offsety = 400
 zhijings = [20,30,50]
 nums = [1,10,20]
 
-my_dict = {
-    0:"00",
-    1:"01",
-    2:"02",
-    3:"10",
-    4:"11",
-    5:"12",
-    6:"20",
-    7:"21",
-    8:"22"
-}
+my_dict = [
+    "00",
+    "01",
+    "02",
+    "10",
+    "11",
+    "12",
+    "20",
+    "21",
+    "22"
+]
 
 stime = 0
 flag = False
@@ -63,10 +63,10 @@ def min_distance(index):
     x = index['x']
     y = index['y']
     distance1 = round(pow(sqrt(pow(pos[0]-x,2)+pow(pos[1]-y,2))-10-zhijing/2,2),1)
-    distance2 = round(pow(sqrt(pow(pos[0]-offsetx-x,2)+pow(pos[1]-y,2))-10-zhijing/2,2),1)
-    distance3 = round(pow(sqrt(pow(pos[0]-offsetx-x,2)+pow(pos[1]-offsety-y,2))-10-zhijing/2,2),1)
-    distance4 = round(pow(sqrt(pow(pos[0]-x,2)+pow(pos[1]-offsety-y,2))-10-zhijing/2,2),1)
-    res.append(str(min(distance1,distance2,distance3,distance4)))
+    #distance2 = round(pow(sqrt(pow(pos[0]-offsetx-x,2)+pow(pos[1]-y,2))-10-zhijing/2,2),1)
+    # distance3 = round(pow(sqrt(pow(pos[0]-offsetx-x,2)+pow(pos[1]-offsety-y,2))-10-zhijing/2,2),1)
+    # distance4 = round(pow(sqrt(pow(pos[0]-x,2)+pow(pos[1]-offsety-y,2))-10-zhijing/2,2),1)
+    res.append(str(distance1))
 
 def checkstart():
     global flag,stime,sindex
@@ -125,6 +125,7 @@ def init(cishu):
     y_temp = 0
 
 if __name__ == '__main__':
+    shuffle(my_dict)
     cishu = 0
     init(cishu)
     pygame.init()

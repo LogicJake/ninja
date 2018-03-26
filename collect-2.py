@@ -64,9 +64,9 @@ def min_distance(index):
     y = index['y']
     distance1 = round(pow(sqrt(pow(pos[0]-x,2)+pow(pos[1]-y,2))-10-zhijing/2,2),1)
     distance2 = round(pow(sqrt(pow(pos[0]-offsetx-x,2)+pow(pos[1]-y,2))-10-zhijing/2,2),1)
-    distance3 = round(pow(sqrt(pow(pos[0]-offsetx-x,2)+pow(pos[1]-offsety-y,2))-10-zhijing/2,2),1)
-    distance4 = round(pow(sqrt(pow(pos[0]-x,2)+pow(pos[1]-offsety-y,2))-10-zhijing/2,2),1)
-    res.append(str(min(distance1,distance2,distance3,distance4)))
+    # distance3 = round(pow(sqrt(pow(pos[0]-offsetx-x,2)+pow(pos[1]-offsety-y,2))-10-zhijing/2,2),1)
+    # distance4 = round(pow(sqrt(pow(pos[0]-x,2)+pow(pos[1]-offsety-y,2))-10-zhijing/2,2),1)
+    res.append(str(min(distance1,distance2)))
 
 def checkstart():
     global flag,stime,sindex

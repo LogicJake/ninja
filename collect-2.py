@@ -146,8 +146,8 @@ if __name__ == '__main__':
         # 游戏主循环
         for event in pygame.event.get():
             screen.blit(mouse_cursor, (x_temp, y_temp))
-            screen.blit(mouse_cursor2, (x_temp - offsetx, y_temp - offsety))
-            screen.blit(mouse_cursor3, (x_temp, y_temp - offsety))
+            # screen.blit(mouse_cursor2, (x_temp - offsetx, y_temp - offsety))
+            # screen.blit(mouse_cursor3, (x_temp, y_temp - offsety))
             screen.blit(mouse_cursor4, (x_temp - offsetx, y_temp))
             if event.type == KEYDOWN:
                 if event.key == K_1:
@@ -198,44 +198,44 @@ if __name__ == '__main__':
             x_temp = x
             y_temp = y
             screen.blit(mouse_cursor, (x, y))
-            screen.blit(mouse_cursor2, (x-offsetx, y-offsety))
-            screen.blit(mouse_cursor3, (x, y-offsety))
+            # screen.blit(mouse_cursor2, (x-offsetx, y-offsety))
+            # screen.blit(mouse_cursor3, (x, y-offsety))
             screen.blit(mouse_cursor4, (x-offsetx, y))
-            check(screen, index, x - offsetx, y - offsety)
-            check(screen, index, x, y - offsety)
+            # check(screen, index, x - offsetx, y - offsety)
+            # check(screen, index, x, y - offsety)
             check(screen, index, x - offsetx, y)
             check(screen, index, x, y)
-        elif choice == 1:
-            screen.blit(mouse_cursor, (x_temp, y_temp))
-            screen.blit(mouse_cursor2, (x - offsetx, y - offsety))
-            screen.blit(mouse_cursor3, (x_temp, y_temp - offsety))
-            screen.blit(mouse_cursor4, (x_temp - offsetx, y_temp))
-            check(screen,index,x-offsetx,y-offsety)
-        elif choice == 2:
-            screen.blit(mouse_cursor, (x_temp, y_temp))
-            screen.blit(mouse_cursor2, (x_temp-offsetx, y_temp-offsety))
-            screen.blit(mouse_cursor3, (x, y-offsety))
-            screen.blit(mouse_cursor4, (x_temp-offsetx, y_temp))
-            check(screen, index,x, y-offsety)
+        # elif choice == 1:
+        #     screen.blit(mouse_cursor, (x_temp, y_temp))
+        #     screen.blit(mouse_cursor2, (x - offsetx, y - offsety))
+        #     screen.blit(mouse_cursor3, (x_temp, y_temp - offsety))
+        #     screen.blit(mouse_cursor4, (x_temp - offsetx, y_temp))
+        #     check(screen,index,x-offsetx,y-offsety)
+        # elif choice == 2:
+        #     screen.blit(mouse_cursor, (x_temp, y_temp))
+        #     screen.blit(mouse_cursor2, (x_temp-offsetx, y_temp-offsety))
+        #     screen.blit(mouse_cursor3, (x, y-offsety))
+        #     screen.blit(mouse_cursor4, (x_temp-offsetx, y_temp))
+        #     check(screen, index,x, y-offsety)
         elif choice == 3:
             screen.blit(mouse_cursor, (x_temp, y_temp))
-            screen.blit(mouse_cursor2, (x_temp-offsetx, y_temp-offsety))
-            screen.blit(mouse_cursor3, (x_temp, y_temp-offsety))
+            # screen.blit(mouse_cursor2, (x_temp-offsetx, y_temp-offsety))
+            # screen.blit(mouse_cursor3, (x_temp, y_temp-offsety))
             screen.blit(mouse_cursor4, (x-offsetx, y))
             check(screen, index,x-offsetx, y)
         elif choice == 4:
             screen.blit(mouse_cursor, (x, y))
-            screen.blit(mouse_cursor2, (x_temp-offsetx, y_temp-offsety))
-            screen.blit(mouse_cursor3, (x_temp, y_temp-offsety))
+            # screen.blit(mouse_cursor2, (x_temp-offsetx, y_temp-offsety))
+            # screen.blit(mouse_cursor3, (x_temp, y_temp-offsety))
             screen.blit(mouse_cursor4, (x_temp-offsetx, y_temp))
             check(screen, index,x,y)
         elif choice == 5:
             screen.blit(mouse_cursor, (x, y))
-            screen.blit(mouse_cursor2, (x - offsetx, y - offsety))
-            screen.blit(mouse_cursor3, (x, y - offsety))
+            # screen.blit(mouse_cursor2, (x - offsetx, y - offsety))
+            # screen.blit(mouse_cursor3, (x, y - offsety))
             screen.blit(mouse_cursor4, (x - offsetx, y))
-            check(screen, index, x - offsetx, y - offsety)
-            check(screen, index, x, y - offsety)
+            # check(screen, index, x - offsetx, y - offsety)
+            # check(screen, index, x, y - offsety)
             check(screen, index, x - offsetx, y)
             check(screen, index, x, y)
 
